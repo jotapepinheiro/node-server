@@ -4,10 +4,10 @@ This project sets up a Node.js application using Docker on Amazon Linux 2023, wi
 
 ## Prerequisites
 
-- Amazon Linux 2023 instance
+- Amazon Linux 2023 instance (AWS Lightsail)
 - Docker (install instructions below)
 - Docker Compose (install instructions below)
-- The domain api.in30.com.br pointing to your EC2 instance's public IP address
+- The domain api.in30.com.br pointing to your Lightsail instance's public IP address
 
 ## Installation on Amazon Linux 2023
 
@@ -26,7 +26,12 @@ This project sets up a Node.js application using Docker on Amazon Linux 2023, wi
    sudo chmod +x /usr/local/bin/docker-compose
    ```
 
-3. Log out and log back in for the group changes to take effect.
+3. Install additional useful tools (git, htop, unzip):
+   ```
+   sudo dnf install git htop unzip -y
+   ```
+
+4. Log out and log back in for the group changes to take effect.
 
 ## Getting Started
 
@@ -99,7 +104,7 @@ Certbot will automatically try to renew the certificates when they are close to 
 
 ## Security Considerations
 
-- Ensure that your EC2 security group allows inbound traffic on ports 80 and 443.
+- Ensure that your Lightsail instance's firewall allows inbound traffic on ports 80 and 443.
 - Consider setting up AWS WAF for additional security.
 - Regularly update your Amazon Linux 2023 instance and Docker images.
 
